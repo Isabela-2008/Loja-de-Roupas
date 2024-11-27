@@ -1,0 +1,75 @@
+Banco de Dados LojadeRoupas
+
+Este projeto envolve a criação de um banco de dados para uma loja de roupas, chamado LojadeRoupas. O banco de dados é projetado para gerenciar as categorias de produtos, produtos disponíveis, clientes, vendas, itens de venda e fornecedores. Os principais componentes do banco de dados incluem:
+
+Categorias: Uma tabela para armazenar as categorias dos produtos, incluindo um identificador único e o nome da categoria.
+Produtos: Uma tabela para armazenar os detalhes dos produtos, incluindo um identificador único, nome, tamanho, cor, preço, estoque, e chaves estrangeiras para a categoria e fornecedor.
+Clientes: Uma tabela para armazenar informações dos clientes, incluindo um identificador único, nome, e-mail, telefone e endereço.
+Vendas: Uma tabela para registrar as vendas, incluindo um identificador único, ID do cliente, ID do produto, data da venda e valor total.
+Itens de Venda: Uma tabela para armazenar informações sobre os itens vendidos, incluindo um identificador único e detalhes do cliente.
+Fornecedores: Uma tabela para armazenar informações sobre os fornecedores, incluindo um identificador único, nome, telefone e endereço.
+README.md
+markdown
+# Banco de Dados LojadeRoupas  
+
+## Visão Geral  
+O Banco de Dados LojadeRoupas é um banco de dados relacional projetado para gerenciar uma loja de roupas, incluindo categorias de produtos, detalhes dos produtos, clientes, vendas, itens de venda e fornecedores.  
+
+## Tabelas  
+- **categorias**: Armazena as categorias dos produtos.  
+  - `id_categoria`: Identificador único da categoria.  
+  - `nome`: Nome da categoria.  
+
+- **produtos**: Armazena informações sobre os produtos.  
+  - `id_produto`: Identificador único do produto.  
+  - `nome`: Nome do produto.  
+  - `tamanho`: Tamanho do produto.  
+  - `cor`: Cor do produto.  
+  - `preco`: Preço do produto.  
+  - `estoque`: Quantidade em estoque do produto.  
+  - `id_categoria`: Chave estrangeira referenciando a categoria.  
+  - `id_fornecedor`: Chave estrangeira referenciando o fornecedor.  
+
+- **clientes**: Armazena informações dos clientes.  
+  - `id_cliente`: Identificador único do cliente.  
+  - `nome`: Nome do cliente.  
+  - `email`: E-mail do cliente.  
+  - `telefone`: Telefone do cliente.  
+  - `endereco`: Endereço do cliente.  
+
+- **vendas**: Registra as vendas realizadas.  
+  - `id_venda`: Identificador único da venda.  
+  - `id_cliente`: Chave estrangeira referenciando o cliente.  
+  - `id_produto`: Chave estrangeira referenciando o produto.  
+  - `data_venda`: Data da venda.  
+  - `valor_total`: Valor total da venda.  
+
+- **Itensvenda**: Armazena informações sobre os itens vendidos.  
+  - `id_item`: Identificador único do item.  
+  - `nome`: Nome do item.  
+  - `email`: E-mail do cliente.  
+  - `telefone`: Telefone do cliente.  
+  - `endereco`: Endereço do cliente.  
+
+- **fornecedores**: Armazena informações sobre os fornecedores.  
+  - `id_fornecedor`: Identificador único do fornecedor.  
+  - `nome`: Nome do fornecedor.  
+  - `telefone`: Telefone do fornecedor.  
+  - `endereco`: Endereço do fornecedor.  
+
+## Iniciando  
+Para configurar o banco de dados:  
+
+1. Clone o repositório:  
+   ```bash  
+   git clone <url-do-repositorio>  
+   cd LojadeRoupas  
+Crie o banco de dados:
+
+sql
+CREATE DATABASE IF NOT EXISTS LojadeRoupas;  
+USE LojadeRoupas;  
+Execute os scripts SQL para criar as tabelas e inserir dados iniciais.
+
+Script SQL
+O script SQL inclui comandos para criar tabelas e inserir dados iniciais. Certifique-se de que você tenha um servidor MySQL em execução antes de executar o script.
