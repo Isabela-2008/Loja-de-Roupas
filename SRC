@@ -1,0 +1,80 @@
+create database if not exists LojadeRoupas;
+use lojaderoupas;
+
+create table if not exists  categorias (
+id_categoria int auto_increment primary key,
+nome varchar(50)
+);
+
+create table if not exists produtos (
+id_produto int auto_increment,
+nome varchar(100),
+tamanho varchar(5),
+cor varchar(30),
+preco decimal(10,2),
+estoque int,
+id_categoria int,
+id_fornecedor int
+);
+
+create table if not exists clientes (
+id_cliente int auto_increment,
+nome varchar(100),
+email varchar(100),
+telefone varchar(15),
+endereco varchar(255)
+);
+
+create table if not exists vendas (
+id_venda int auto_increment,
+id_cliente int,
+id_produto int,
+data_venda datetime,
+valor_total decimal(10,2)
+);
+
+create table if not exists Itensvenda (
+id_item int auto_increment,
+nome varchar(100),
+email varchar(100),
+telefone varchar(15),
+endereco varchar (255)
+);
+
+create table if not exists fornecedores (
+id_fornecedor int auto_increment,
+nome varchar(100),
+telefone varchar(15),
+endereco varchar(255)
+);
+
+insert into categorias (nome) values
+("A"),
+("B"),
+("C");
+
+insert into produtos (nome, tamanho, cor, preco, estoque) values
+("blusa", "P", "preto","100"),
+("calca", "M", "branco","100"),
+("casaco", "G", "azul","100");
+
+insert into clientes (nome, email, telefone, endereco) values
+("Isabela","isabela@gmail.com","11111111111","Bela Vista1"),
+("Cintya","cintya@gmail.com","222222222222", "Bela Vista4"),
+("Ricardo","ricardo@gmail.com","333333333333","Avenida das torres");
+
+insert into vendas (data_venda, valor_total) values
+("11-22-24",100),
+("11-23-24",110),
+("11-24-24",120);
+
+insert into Itensvenda (nome, email, telefone, endereco) values 
+("vestido","vestido@gmail.com","444444444444","sao jose"),
+("saia","saia@gmail.com","5555555555555","floripa"),
+("moletom","moletom@gmail.com","666666666666","palhoca");
+
+insert into fornecedores (nome, telefone, endereco) values
+("Ana","777777777777","biguacu"),
+("Jose","888888888888","navegantes"),
+("Maria","999999999999","governador celso ramos");
+
